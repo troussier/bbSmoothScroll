@@ -42,6 +42,3 @@
         return this;
     };
 }(jQuery));
-
-
-
