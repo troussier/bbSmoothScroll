@@ -28,8 +28,8 @@
                 return;
             }
             var hashOffset = $target.offset().top;
-            var duration = $this.data('duration') || settings.duration;
-            var padding = $this.data('padding') || settings.padding;
+            var duration = $this.data('bbss-duration') || settings.duration;
+            var padding = $this.data('bbss-padding') || settings.padding;
             $page.on(events, scrollStop);
             $page.not(':animated').animate({
                 scrollTop: hashOffset - padding
