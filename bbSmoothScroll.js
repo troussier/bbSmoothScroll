@@ -37,7 +37,6 @@
                 if ($this.data('bbss-push-hash') === 0) return false;
                 return settings.pushHash;
             })();
-            console.log(pushHash);
             if (pushHash !== false) {
                 window.history.pushState(null, null, this.hash);
             }
