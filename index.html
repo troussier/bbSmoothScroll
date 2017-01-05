@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <title>bbSmoothScroll.js sample</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <script src="../lib/jquery-3.1.0.min.js"></script>
-    <script src="../bbSmoothScroll.js"></script>
+    <script src="lib/jquery-3.1.0.min.js"></script>
+    <script src="bbSmoothScroll.js"></script>
     <script>
         jQuery(function($){
-            $('a[href^="#"], area[href^="#"]').bbSmoothScroll();
+            $('a[href^="#"], area[href^="#"]').bbSmoothScroll({
+                //pushHash: false
+            });
         });
     </script>
 </head>
@@ -16,9 +18,9 @@
 <body>
 
 <h1>スムーズスクロール</h1>
-<a href="#scroll">スクロール</a><br>
-<a href="#scroll" data-bbss-duration="3000" data-bbss-padding="300">スクロール 3000/300</a><br>
-<a href="#scroll" data-bbss-duration="100" data-bbss-padding="-100">スクロール 100/-100</a><br>
+<a href="#scroll" data-bbss-push-hash="1">スクロール</a><br>
+<a href="#scroll" data-bbss-duration="3000" data-bbss-padding="300" data-bbss-push-hash="0">スピード: 3000ms / 位置: 300px</a><br>
+<a href="#scroll" data-bbss-duration="100" data-bbss-padding="-100">スピード: 100ms / 位置: -100px</a><br>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 

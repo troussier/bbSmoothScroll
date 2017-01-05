@@ -1,10 +1,5 @@
 /*
  * スムーズスクロールプラグイン
- * $('.scroll').bbSmoothScroll({
- *     duration: 800,
- *     padding: 0
- * });
- * <a href="#jumpto" class="scroll" data-duration="800" data-padding="0">FIRE<a>
  */
 ;(function($){
     'use strict';
@@ -12,7 +7,8 @@
     $.fn.bbSmoothScroll = function(options) {
         var settings = $.extend({
             duration: 800,
-            padding: 0
+            padding: 0,
+            pushHash: true
         }, options);
         
         var $page = $('html, body');
@@ -36,7 +32,15 @@
             }, duration, 'swing', function() {
                 $page.off(events, scrollStop);
             });
-            window.history.pushState(null, null, this.hash);
+            var pushHash = (function() {
+                if ($this.data('bbss-push-hash') === 1) return true;
+                if ($this.data('bbss-push-hash') === 0) return false;
+                return settings.pushHash;
+            })();
+            console.log(pushHash);
+            if (pushHash !== false) {
+                window.history.pushState(null, null, this.hash);
+            }
         });
         
         return this;
