@@ -19,7 +19,7 @@
         this.on('click', function(e){
             var $this = $(this);
             e.preventDefault();
-            var $target = $(this.hash);
+            var $target = $(decodeURI(this.hash));
             if (!$target.length) {
                 return;
             }
